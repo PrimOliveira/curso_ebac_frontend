@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body > header {
+    background-color: #0d1928;
+    padding: 16px 0;
+}
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header li {
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 16px;
+}
+
+header li a {
+    color: #f5f6fa;
+    text-decoration: none;
+}
+
+.container {
+    width: 1366px;
+    margin: 0 auto;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between ;
+}
+
+.articles article img {
+/*height: 180px;*/
+width: 100%;
+}
+
+.articles article {
+    width: 30%;
+}
+
+section {
+    padding: 16px 0;
+}
+
+section h2,
+.articles article {
+    margin-bottom: 16px;
+}
+
+.articles article h3 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    
+}
+
+.articles article a {
+    background-color: rgb(1, 1, 156);
+    color: #fff;
+    padding: 8px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.articles article a:hover {
+    text-decoration: underline;
+}
+
+.articles article p,
+.articles article a {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.articles article h3 {
+   font-size: 24px; 
+}
+
+section h2  {
+    font-size: 32px;
+}
+h1 {
+    color: rgb(90, 84, 204);
+}
+
+#sports {
+    background-color: rgba(22, 186, 0, 0.166);
+}
+
+#economy {
+    background-color: rgba(250, 255, 101, 0.388);
+}
+
+#moda {
+    background-color: rgba(173, 102, 232, 0.166);
+}
+
+#politics {
+    background-color: rgba(12, 238, 211, 0.3);
+}
+#sports h2 {
+    color: rgb(0, 85, 0);
+}
+
+
+#economy h2 {
+    color: rgb(120, 46, 0);
+}
+
+#moda h2 {
+    color: rgb(237, 8, 69);
+}
+
+#politics h2 {
+    color: rgb(16, 19, 197);
+}
+
+
+.creation-date {
+    color: #ccc;
+}
+
