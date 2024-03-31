@@ -1,0 +1,120 @@
+// Variáveis
+$font-stack: 'Roboto', sans-serif;
+$bg-color: #f5f6fa;
+$primary-color: #182C61;
+$secondary-color: #44bd32;
+$secondary-color-hover: #4cd137;
+$container-max-width: 1024px;
+$container-max-width-mobile: 80%;
+$grid-columns-desktop: 3;
+$grid-columns-tablet: 2;
+$grid-gap: 1%;
+$product-margin-bottom-mobile: 32px;
+
+// Importando módulos do SASS
+@use 'sass:math';
+@use 'sass:media';
+
+// Estilos
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack;
+}
+
+body {
+    background-color: $bg-color;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: $container-max-width;
+    width: 100%;
+    margin: 0 auto;
+
+    // Utilizando variáveis e módulos do SASS
+    @include media(max-width: 1023px) {
+        max-width: $container-max-width-mobile;
+    }
+}
+
+header {
+    background-color: $primary-color;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+}
+
+.menu {
+    display: flex;
+
+    li {
+        font-weight: bold;
+        margin-left: 24px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+section {
+    padding: 56px 0;
+}
+
+.products {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(#{$grid-columns-desktop}, #{math.div(100, $grid-columns-desktop)}%);
+    column-gap: $grid-gap;
+    row-gap: 4%;
+    width: 100%;
+
+    // Utilizando variáveis e módulos do SASS
+    @include media(max-width: 1023px) {
+        grid-template-columns: repeat(#{$grid-columns-tablet}, #{math.div(100, $grid-columns-tablet)}%);
+        column-gap: 3%;
+    }
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.product-button {
+    display: block;
+    background-color: $secondary-color;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $secondary-color-hover;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+    }
+
+    .product-item  {
+        margin-bottom: $product-margin-bottom-mobile;
+    }
+}
