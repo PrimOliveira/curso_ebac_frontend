@@ -1,0 +1,136 @@
+// Variáveis
+$background-color: #f5f6fa;
+$header-background-color: #182C61;
+$menu-link-color: #fff;
+$product-button-background-color: #44bd32;
+$product-button-hover-color: #4cd137;
+
+$container-max-width: 1024px;
+$container-padding: 16px;
+$menu-margin-left: 24px;
+$section-padding: 56px;
+$product-item-margin-top: 40px;
+$product-item-border-radius: 16px;
+$product-button-padding: 8px;
+$product-button-border-radius: 8px;
+$product-item-margin-bottom: 32px;
+
+$font-family: 'Roboto', sans-serif;
+
+// Mixins
+@mixin flex-container($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid-container($columns: 3, $col-gap: 1%, $row-gap: 4%) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  column-gap: $col-gap;
+  row-gap: $row-gap;
+}
+
+// Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+body {
+  background-color: $background-color;
+}
+
+li {
+  list-style: none;
+}
+
+// Layout
+.container {
+  max-width: $container-max-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+header {
+  background-color: $header-background-color;
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  .container {
+    @include flex-container;
+    padding: $container-padding 0;
+  }
+}
+
+// Menu
+.menu {
+  @include flex-container(flex-start);
+
+  li {
+    font-weight: bold;
+    margin-left: $menu-margin-left;
+
+    a {
+      color: $menu-link-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// Sections
+section {
+  padding: $section-padding 0;
+}
+
+.products {
+  margin-top: $product-item-margin-top;
+  @include grid-container(3, 1%, 4%);
+
+  .product-item {
+    img {
+      width: 100%;
+      border-radius: $product-item-border-radius;
+    }
+
+    &:hover .product-button {
+      background-color: $product-button-hover-color;
+    }
+
+    .product-button {
+      display: block;
+      background-color: $product-button-background-color;
+      color: $menu-link-color;
+      text-align: center;
+      padding: $product-button-padding 0;
+      border-radius: $product-button-border-radius;
+      margin-top: $product-button-padding;
+      text-decoration: none;
+    }
+  }
+}
+
+// Media Queries
+@media screen and (max-width: 1023px) {
+  .container {
+    max-width: 80%;
+  }
+
+  .products {
+    @include grid-container(2, 3%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .products {
+    display: block;
+
+    .product-item {
+      margin-bottom: $product-item-margin-bottom;
+    }
+  }
+}
