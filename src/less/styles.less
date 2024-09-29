@@ -1,0 +1,31 @@
+@primary-color: #3498db;
+@font-color: #fff;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: @primary-color;
+  color: @font-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+button {
+  background-color: darken(@primary-color, 10%);
+  color: @font-color;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: lighten(@primary-color, 10%);
+}
