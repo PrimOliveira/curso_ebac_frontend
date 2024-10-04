@@ -1,0 +1,203 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background-color: #1c1c1c;
+    color: #fff;
+    font-size: 16px;
+}
+
+header {
+    background-image: url('imagens/hogwarts-space.jpg'); /* Caminho da imagem */
+    background-size: cover; /* Garante que a imagem cubra todo o header */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Efeito parallax sutil ao rolar a página */
+    height: 100vh; /* O header ocupará a altura total da janela do navegador */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #f1c40f; /* Cor dourada, remetendo à saga */
+    padding: 0 20px;
+    position: relative;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Adiciona um overlay escuro para melhor legibilidade do texto */
+    z-index: 1;
+}
+
+header h1, header p, .scroll-btn {
+    position: relative;
+    z-index: 2; /* Garante que os textos e botões fiquem acima do overlay */
+}
+
+.scroll-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #e1b40e;
+}
+
+
+.scroll-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #e1b40e;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #333;
+}
+
+.intro img {
+    width: 400px;
+    border-radius: 10px;
+}
+
+.intro .text {
+    margin-left: 30px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: #2c3e50;
+}
+
+.features .feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+.features i {
+    font-size: 3em;
+    color: #f1c40f;
+    transition: transform 0.3s ease;
+}
+
+.features h3 {
+    margin: 20px 0;
+    color: #f1c40f;
+}
+
+.features p {
+    color: #bdc3c7;
+}
+
+.gallery {
+    padding: 50px;
+    text-align: center;
+    background-color: #2c2c2c;
+}
+
+.gallery h2 {
+    margin-bottom: 20px;
+}
+
+.gallery .image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery .image-grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery .image-grid img:hover {
+    transform: scale(1.1);
+}
+
+.timeline {
+    padding: 50px;
+    background-color: #222;
+}
+
+.timeline h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-item {
+    max-width: 600px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-left: 3px solid #f1c40f;
+    background-color: #333;
+}
+
+.timeline-item h3 {
+    margin-bottom: 10px;
+    color: #f1c40f;
+}
+
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+.scroll-btn {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    color: #000;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .intro {
+    flex-direction: column;
+    }
+
+    .intro img {
+    margin-bottom: 20px;
+    }
+}
