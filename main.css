@@ -1,0 +1,390 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    
+  }
+  
+  /* Layout base */
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f9f9f9; /* Cor de fundo neutra para destaque */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2, h3, p {
+    margin-bottom: 20px;
+  }
+  
+  /* Cabeçalho */
+  .header {
+    background-image: url('imagens/baloes.jpg'); /* Insira o caminho da sua imagem aqui */
+    background-size: cover; /* Faz a imagem cobrir todo o cabeçalho */
+    background-position: center; /* Centraliza a imagem */
+    height: 100vh; /* Altura do cabeçalho */
+    display: flex; /* Flexbox para centralizar conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    text-align: center; /* Centraliza texto */
+    position: relative; /* Para overlay */
+    overflow: hidden; /* Oculta qualquer parte da imagem que sai do cabeçalho */
+}
+
+.header::before {
+    content: ''; /* Cria um overlay */
+    position: absolute; /* Posiciona o overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.041); /* Overlay escuro */
+    transition: background 0.5s ease; /* Transição suave */
+}
+
+.header:hover::before {
+    background: rgba(0, 0, 0, 0.27); /* Muda a cor do overlay ao passar o mouse */
+}
+
+.header-content {
+    position: relative; /* Para estar acima do overlay */
+    z-index: 2; /* Para garantir que o conteúdo esteja visível */
+}
+
+.navbar {
+    position:absolute; /* Fixa a navbar no topo da página */
+    top: 0; /* Coloca no topo */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+    background: rgba(255, 255, 255, 0); /* Fundo branco semi-transparente */
+    padding: 15px 20px; /* Espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.078); /* Sombra suave */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.nav-list {
+    display: flex; /* Layout flexível */
+    list-style: none; /* Remove marcadores */
+    justify-content: flex-end; /* Alinha à direita */
+    margin: 0; /* Remove margem */
+    padding: 0; /* Remove preenchimento */
+}
+
+.nav-list li {
+    margin-left: 20px; /* Espaçamento entre itens */
+}
+
+.nav-list a {
+    text-decoration: none; /* Remove sublinhado */
+    color: #000000; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    position: relative; /* Para o efeito de linha embaixo */
+    padding: 5px 0; /* Espaçamento vertical */
+}
+
+.nav-list a:hover {
+    color: #ff30b3; /* Cor ao passar o mouse */
+}
+
+/* Efeito de linha abaixo do link ativo */
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Abaixo do texto */
+    height: 2px; /* Altura da linha */
+    background: #ff30b3; /* Cor da linha */
+    transform: scaleX(0); /* Inicialmente invisível */
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.nav-list a:hover::after,
+.nav-list a:focus::after {
+    transform: scaleX(1); /* Mostra a linha ao passar o mouse */
+}
+
+.hamburger {
+    display: none; /* Inicialmente escondido */
+    flex-direction: column; /* Para empilhar linhas */
+    cursor: pointer; /* Cursor de ponteiro */
+}
+
+.line {
+    height: 3px; /* Altura da linha */
+    width: 25px; /* Largura da linha */
+    background-color: #333; /* Cor da linha */
+    margin: 4px 0; /* Espaçamento entre linhas */
+    transition: all 0.3s ease; /* Transição suave */
+}
+  
+  .header-content {
+    color: #000000;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .main-title {
+    color: #0c0c0c;
+    font-size: 48px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out; /* Efeito de fade */
+  }
+  
+  .main-description {
+    color: #000000;
+    font-size: 20px;
+    animation: fadeIn 1s ease-in-out 0.5s; /* Efeito de fade */
+  }
+  
+  .scroll-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f96bc5; /* Cor do botão */
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .scroll-btn:hover {
+    background-color: #ff92d7; /* Efeito de cor no hover */
+    transform: scale(1.05); /* Efeito de escala */
+  }
+  
+  /* Seções */
+  .evento {
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .evento-details {
+    flex: 1;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .evento-img img {
+    width:100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  }
+  
+  /* Galeria de imagens */
+  .imagens-ilustrativas {
+    padding: 60px 0;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .gallery img {
+    width: calc(25% - 10px);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+  }
+  
+  /* Seção de ingressos */
+  .ingresso {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #ffe0b2; /* Cor de fundo clara */
+  }
+  
+  .ingresso-details {
+    margin-top: 20px;
+  }
+  
+  .buy-btn {
+    padding: 10px 20px;
+    background-color: #ff5722; /* Botão laranja vibrante */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .buy-btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05); /* Efeito de escala no hover */
+  }
+  
+  /* Seção de atividades */
+  .atividades {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #d1c4e9; /* Cor de fundo suave */
+  }
+  
+  .atividades-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .atividades-list li {
+    font-size: 20px;
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .atividades-list li:hover {
+    transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+  }
+  
+  /* Seção de contato */
+  .contato {
+    padding: 60px 0;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .submit-btn {
+    padding: 10px;
+    background-color: #f96bc5; /* Botão */
+    font-weight:600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #ff92d7;
+    transform: scale(1.05); /* Efeito de escala no hover */
+  }
+  
+  /* Rodapé */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Oculta a lista por padrão */
+        flex-direction: column; /* Para empilhar itens */
+        position: absolute; /* Posiciona em relação ao navbar */
+        top: 60px; /* Abaixo do navbar */
+        left: 0; /* Alinha à esquerda */
+        right: 0; /* Alinha à direita */
+        background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        z-index: 999; /* Para garantir que fique acima */
+        padding: 10px 0; /* Espaçamento interno */
+    }
+
+    .nav-list.active {
+        display: flex; /* Mostra a lista quando ativa */
+    }
+
+    .nav-list li {
+        margin: 15px 0; /* Espaçamento maior entre itens */
+        text-align: center; /* Centraliza o texto dos itens */
+    }
+
+    .hamburger {
+        display: flex; /* Mostra o hamburger em dispositivos móveis */
+        margin-left: auto; /* Alinha à direita */
+    }
+
+
+    .header-content {
+        padding: 16px;
+        font-size: 15px;
+    }
+
+    .main-title {
+        font-size: 20px; 
+    }
+
+    .main-description {
+        font-size: 15px;
+    }
+
+
+    h1, h2, h3, p {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+
+    .evento {
+        text-align: center;
+        padding: 60px 0;
+      }
+      
+      .evento-details {
+        flex: 1;
+        padding-right: 20px;
+        padding-bottom: 20px;
+      }
+      
+      .evento-img img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+      }
+      
+     .gallery {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+      }
+      
+      .gallery img {
+       
+        width: calc(70% - 10px);
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+}
+  
+  /* Animações */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
