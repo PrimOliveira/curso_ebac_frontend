@@ -7,9 +7,14 @@
 }
 
 body {
+    position: relative
     background-color: #1c1c1c;
     color: #fff;
     font-size: 16px;
+}
+
+html, body {
+    overflow-x: hidden;
 }
 
 header {
@@ -193,17 +198,31 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+
     .intro {
+        
     flex-direction: column;
     }
 
     .intro img {
+    width: 300px;
+    border-radius: 10px;  
     margin-bottom: 20px;
     }
 
     .intro .text {
+        text-align:center;
         font-size: 18px;
-        text-align: start;
-        margin-left: 30px;
+        margin-left: 10px;
+        
     }
+
+    .features {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+}
+
+
 }
