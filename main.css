@@ -44,7 +44,12 @@ header::before {
     z-index: 1;
 }
 
+.header h1 {
+    font-size: 40px;
+}
+
 header h1, header p, .scroll-btn {
+    padding: 8px;
     position: relative;
     z-index: 2; /* Garante que os textos e botões fiquem acima do overlay */
 }
@@ -94,6 +99,7 @@ header h1, header p, .scroll-btn {
 }
 
 .intro .text {
+    margin-top: 16px;
     margin-left: 0px;
 }
 
@@ -116,7 +122,7 @@ header h1, header p, .scroll-btn {
 }
 
 .features h3 {
-    margin: 20px 0;
+    margin: 16px 0;
     color: #f1c40f;
 }
 
@@ -131,7 +137,7 @@ header h1, header p, .scroll-btn {
 }
 
 .gallery h2 {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 .gallery .image-grid {
@@ -222,6 +228,10 @@ footer {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+}
+
+   .feature {
+    margin: 16px;
 }
 
 
