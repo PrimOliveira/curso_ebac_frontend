@@ -59,7 +59,7 @@
 }
 
 .navbar {
-    position:absolute; /* Fixa a navbar no topo da página */
+    position: fixed; /* Fixa a navbar no topo da página */
     top: 0; /* Coloca no topo */
     left: 0; /* Alinha à esquerda */
     right: 0; /* Alinha à direita */
@@ -67,6 +67,10 @@
     padding: 15px 20px; /* Espaçamento interno */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.078); /* Sombra suave */
     z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.nav-list.active {
+  display: flex; /* Exibe o menu quando a classe active está presente */
 }
 
 .nav-list {
@@ -144,7 +148,40 @@
     font-size: 20px;
     animation: fadeIn 1s ease-in-out 0.5s; /* Efeito de fade */
   }
-  
+
+/* Estilo do contador no header */
+.countdown-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff; 
+}
+
+#countdown {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.77); /* Fundo semi-transparente */
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+#countdown div {
+  text-align: center;
+}
+
+#countdown span {
+  font-weight: bold;
+  font-size: 36px;
+  color: #ff30b3; /* Cor de destaque */
+}
+
+h5 {
+  margin-top: 24px;
+  font-size: 16px;
+} 
   .scroll-btn {
     margin-top: 20px;
     padding: 10px 20px;
@@ -297,36 +334,51 @@
   /* Responsividade */
   @media (max-width: 768px) {
     .nav-list {
-        display: none; /* Oculta a lista por padrão */
-        flex-direction: column; /* Para empilhar itens */
-        position: absolute; /* Posiciona em relação ao navbar */
-        top: 60px; /* Abaixo do navbar */
-        left: 0; /* Alinha à esquerda */
-        right: 0; /* Alinha à direita */
-        background-color: rgba(255, 255, 255, 0.95); /* Fundo branco semi-transparente */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
-        z-index: 999; /* Para garantir que fique acima */
-        padding: 10px 0; /* Espaçamento interno */
-    }
+      display: none; /* Oculta a lista por padrão */
+      flex-direction: column; /* Para empilhar itens */
+      position: static;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: rgba(255, 255, 255, 0.95); 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      padding: 10px 0;
+  }
 
-    .nav-list.active {
-        display: flex; /* Mostra a lista quando ativa */
-    }
+  .nav-list.active {
+    display: flex; /* Corrige aqui: mostra a lista quando ativa */
+}
 
-    .nav-list li {
-        margin: 15px 0; /* Espaçamento maior entre itens */
-        text-align: center; /* Centraliza o texto dos itens */
-    }
+
+
+  .nav-list li {
+      margin: 15px 0; /* Espaçamento maior entre itens */
+      text-align: center; /* Centraliza o texto dos itens */
+}
 
     .hamburger {
         display: flex; /* Mostra o hamburger em dispositivos móveis */
         margin-left: auto; /* Alinha à direita */
     }
 
+    .line {
+      height: 3px;
+      width: 25px;
+      background-color: #333;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+  }
+    
+    .header {
+      height: 80vh; /* Reduz a altura do cabeçalho em telas menores */
+      background-position: center;
+  }
 
     .header-content {
         padding: 16px;
         font-size: 15px;
+        text-align: center;
     }
 
     .main-title {
@@ -335,9 +387,30 @@
 
     .main-description {
         font-size: 15px;
+        margin-bottom: 10px;
     }
 
+    .scroll-btn {
+      padding: 8px 16px; /* Ajusta o botão para telas menores */
+      font-size: 14px;
+  }
 
+  .countdown-container {
+    margin-top: 10px;
+    font-size: 16px; /* Reduz o tamanho da fonte */
+}
+
+  #countdown {
+    gap: 5px; /* Menor espaçamento entre os blocos do contador */
+    font-size: 14px; /* Tamanho menor da fonte do contador */
+    padding: 5px 10px; /* Ajusta o padding do fundo do contador */
+}
+
+  #countdown span {
+    font-size: 24px; /* Reduz o tamanho dos números no contador */
+}
+
+  
     h1, h2, h3, p {
         text-align: center;
         margin-bottom: 20px;
@@ -349,27 +422,27 @@
         padding: 60px 0;
       }
       
-      .evento-details {
+    .evento-details {
         flex: 1;
         padding-right: 20px;
         padding-bottom: 20px;
       }
       
-      .evento-img img {
+    .evento-img img {
         width: 100%;
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
       }
       
-     .gallery {
+    .gallery {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         
       }
       
-      .gallery img {
-       
+    .gallery img {
+      
         width: calc(70% - 10px);
         border-radius: 10px;
         transition: transform 0.3s ease;
@@ -387,4 +460,5 @@
       transform: translateY(0);
     }
   }
+  
   
