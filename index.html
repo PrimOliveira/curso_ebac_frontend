@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Cabeçalho com menu moderno -->
+    
     <header class="header" id="home">
         <div class="navbar">
             <div class="hamburger" id="hamburger">
@@ -29,11 +29,22 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </div>
-            <div class="header-content">
-                <h1>Festa de Aniversário da Prii</h1>
-                <h2 class="main-title" data-aos="fade-up">Celebre meus 31 anos!</h2>
-                <p class="main-description" data-aos="fade-up" data-aos-delay="200">Uma noite mágica cheia de amor, amizade e boas memórias!</p>
-                <a href="#evento" class="scroll-btn">Saiba mais</a>
+        <div class="header-content">
+            <h1>Festa de Aniversário da Prii</h1>
+            <h2 class="main-title" data-aos="fade-up">Celebre meus 32 anos!</h2>
+            <p class="main-description" data-aos="fade-up" data-aos-delay="200">Uma noite mágica cheia de amor, amizade e boas memórias!</p>
+            
+            <!-- Botão de Saiba mais -->
+            <a href="#evento" class="scroll-btn">Saiba mais</a>
+            <h5>O evento começa em:</h5>
+            <!-- Adicionando o contador regressivo -->
+            <div class="countdown-container" data-aos="fade-up" data-aos-delay="400">
+                <div id="countdown">
+                    <div><span id="days"></span> Dias</div>
+                    <div><span id="hours"></span> Horas</div>
+                    <div><span id="minutes"></span> Minutos</div>
+                    <div><span id="seconds"></span> Segundos</div>
+                </div>
             </div>
         </div>
     </header>    
