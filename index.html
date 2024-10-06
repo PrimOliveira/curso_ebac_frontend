@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Github</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- Flaticon Icons CDN -->
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.5.1/uicons-bold-rounded/css/uicons-bold-rounded.css">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img class="profile-avatar" src="https://via.placeholder.com/180x180" alt="user-pic">
+            <h1 class="profile-name">User Name</h1>
+            <h2 class="profile-username">@nickname</h2>
+            <ul class="numbers">
+                <li class="numbers-item">
+                    <i class="fi fi-br-folder"></i>
+                    <h4>Repositórios</h4>
+                    <span>0</span>
+                </li>
+                <li class="numbers-item">
+                    <i class="fi fi-br-users"></i>
+                    <h4>Seguidores</h4>
+                    <span>0</span>
+                </li>
+                <li class="numbers-item">
+                    <i class="fi fi-br-user-add"></i>
+                    <h4>Seguindo</h4>
+                    <span>0</span>
+                </li>
+            </ul>
+            <a href="#" target="_blank" class="profile-link">
+                Ver o perfil no Github
+                <i class="fi fi-br-share-square"></i>
+            </a>
+            <button type="button" class="profile-link research-button">
+                Nova pesquisa
+                <i class="fi fi-br-user"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="page-overlay"></div>
+    <section class="modal">
+        <i class="fi fi-br-user"></i>
+        <h2>GitHub Researcher</h2>
+        <h4>O buscador de perfis do GitHub</h4>
+        <p>Digite o nome de usuário que deseja pesquisar:</p>
+        <form class="modal__form">
+            <input type="text" id="modal__form__input" placeholder="Nome de usuário" required>
+            <button type="submit">
+                Pesquisar
+                <i class="fi fi-br-angle-small-right"></i>
+            </button>
+        </form>
+    </section>
+
+    <!-- Jquery Import -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- Main Js Import-->
+    <script src="main.js"></script>
+</body>
+</html>
