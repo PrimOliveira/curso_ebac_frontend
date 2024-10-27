@@ -1,0 +1,8 @@
+.cabecalho {
+  font-size: 23px;
+  background-color: var(--cor-secundaria);
+  color: black;
+  text-align: center;
+  padding: 24px 0;
+}
+
